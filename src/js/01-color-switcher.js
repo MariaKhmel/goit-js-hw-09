@@ -6,7 +6,7 @@ const refs = {
 }
 
 let intervalId = null;
-let isButtonClicked = false;
+  let isActive = false;
 
 
 refs.startButton.addEventListener('click', onStartButtonClick);
@@ -19,11 +19,13 @@ function getRandomHexColor() {
 
 
 function onStartButtonClick () {
-    if (isButtonClicked === true) {
+   if(isActive){
         return;
     }
-    isButtonClicked === true;
-    intervalId = setInterval(logger, 1000);
+ 
+    isActive = true;
+     intervalId = setInterval(logger, 1000);
+  
     
 }
 
@@ -35,7 +37,7 @@ function logger() {
 function onCloseButtonClick () {
   
     clearInterval(intervalId);
-isButtonClicked === false;
+        isActive = false;
 }
 
 
